@@ -88,7 +88,13 @@
       return value.toLowerCase().includes(userInput.value.toLowerCase());
     });
 
-    // searchOutput.innerHTML =
-    searchOutput.innerHTML += `<p>${searchedInput}</p>`;
+    if (searchedInput.length > 0) {
+      for (let index = 0; index < searchedInput.length; index++) {
+        const element = searchedInput[index];
+        searchOutput.innerHTML += `<p>${element}</p>`;
+      }
+    } else {
+      alert("not found");
+    }
   }
 </script>
